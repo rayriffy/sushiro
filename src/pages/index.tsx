@@ -5,6 +5,7 @@ import { QrcodeIcon } from '@heroicons/react/outline'
 
 import { R } from '../core/components/r'
 import { useCalculate } from '../core/services/useCalculate'
+import { PriceGrid } from '../core/components/priceGrid'
 
 const Page: NextPage = () => {
   const [red, setRed] = useState<string>('0')
@@ -12,15 +13,7 @@ const Page: NextPage = () => {
   const [gold, setGold] = useState<string>('0')
   const [black, setBlack] = useState<string>('0')
 
-  const {
-    total,
-    withoutCharge
-  } = useCalculate(
-    red,
-    silver,
-    gold,
-    black,
-  )
+  const { total, withoutCharge } = useCalculate(red, silver, gold, black)
 
   return (
     <main className="mx-auto max-w-md pt-12 px-6">
@@ -41,77 +34,39 @@ const Page: NextPage = () => {
       <div className="space-y-6">
         <div>
           <div className="grid grid-cols-2 gap-4 mt-2">
-            <div className="col-span-1 bg-white shadow rounded-md border px-4 py-5 sm:p-6">
-              <div className="relative w-20 h-20 bg-rose-700 rounded-full flex justify-center items-center mx-auto shadow">
-                <div className="w-16 h-16 bg-rose-600 rounded-full"></div>
-              </div>
-              <h2 className="text-center font-semibold text-xl my-2">40฿</h2>
-              <input
-                type="number"
-                inputMode="numeric"
-                name="sushi-40"
-                id="sushi-40"
-                defaultValue={0}
-                onChange={event => setRed(event.target.value)}
-                className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                placeholder="0"
-              />
-            </div>
-            <div className="col-span-1 bg-white shadow rounded-md border px-4 py-5 sm:p-6">
-              <div className="relative w-20 h-20 bg-slate-400 rounded-full flex justify-center items-center mx-auto shadow">
-                <div className="w-16 h-16 bg-slate-300 rounded-full"></div>
-              </div>
-              <h2 className="text-center font-semibold text-xl my-2">60฿</h2>
-              <input
-                type="number"
-                inputMode="numeric"
-                name="sushi-60"
-                id="sushi-60"
-                defaultValue={0}
-                onChange={event => setSilver(event.target.value)}
-                className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                placeholder="0"
-              />
-            </div>
-            <div className="col-span-1 bg-white shadow rounded-md border px-4 py-5 sm:p-6">
-              <div className="relative w-20 h-20 bg-yellow-600 rounded-full flex justify-center items-center mx-auto shadow">
-                <div className="w-16 h-16 bg-yellow-500 rounded-full"></div>
-              </div>
-              <h2 className="text-center font-semibold text-xl my-2">80฿</h2>
-              <input
-                type="number"
-                inputMode="numeric"
-                name="sushi-80"
-                id="sushi-80"
-                defaultValue={0}
-                onChange={event => setGold(event.target.value)}
-                className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                placeholder="0"
-              />
-            </div>
-            <div className="col-span-1 bg-white shadow rounded-md border px-4 py-5 sm:p-6">
-              <div className="relative w-20 h-20 bg-slate-800 rounded-full flex justify-center items-center mx-auto shadow">
-                <div className="w-16 h-16 bg-slate-700 rounded-full"></div>
-              </div>
-              <h2 className="text-center font-semibold text-xl my-2">120฿</h2>
-              <input
-                type="number"
-                inputMode="numeric"
-                name="sushi-120"
-                id="sushi-120"
-                defaultValue={0}
-                onChange={event => setBlack(event.target.value)}
-                className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                placeholder="0"
-              />
-            </div>
+            <PriceGrid
+              primaryColor="bg-rose-700"
+              secondaryColor="bg-rose-600"
+              price={40}
+              setter={setRed}
+            />
+            <PriceGrid
+              primaryColor="bg-slate-400"
+              secondaryColor="bg-slate-300"
+              price={60}
+              setter={setSilver}
+            />
+            <PriceGrid
+              primaryColor="bg-yellow-600"
+              secondaryColor="bg-yellow-500"
+              price={80}
+              setter={setGold}
+            />
+            <PriceGrid
+              primaryColor="bg-slate-800"
+              secondaryColor="bg-slate-700"
+              price={120}
+              setter={setBlack}
+            />
           </div>
         </div>
         <div className="bg-white shadow rounded-xl border px-4 py-5 sm:p-6 flex justify-between">
           <div>
             <p>
               <span className="font-bold text-2xl">Total:</span>{' '}
-              <span className="text-2xl font-light pl-2">{total.toLocaleString()}฿</span>
+              <span className="text-2xl font-light pl-2">
+                {total.toLocaleString()}฿
+              </span>
             </p>
             <p className="text-sm text-gray-600 font-extralight">
               {withoutCharge.toLocaleString()}฿ without service charges
