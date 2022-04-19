@@ -51,7 +51,6 @@ const Document: NextPage = () => {
         />
         <meta key="manifest-theme" name="theme-color" content="#ffffff" />
 
-        <title>SUSHIRO calculator</title>
         <Partytown forward={['dataLayer.push']} />
 
         <script

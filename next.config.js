@@ -27,7 +27,6 @@ module.exports = withPlugins(
   ],
   {
     experimental: {
-      reactRoot: 'concurrent',
       polyfillsOptimization: true,
       scrollRestoration: true,
     },
