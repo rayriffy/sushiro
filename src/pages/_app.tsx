@@ -20,7 +20,7 @@ const NextApp: NextPage<AppProps> = props => {
           Version <b>{process.env.buildNumber}</b>
         </p>
         <p className="text-center text-xs sm:text-sm">
-          &copy; 2022 Pradit Amusement
+          &copy; 2022 rayriffy
         </p>
       </footer>
     </Fragment>
