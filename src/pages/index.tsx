@@ -1,10 +1,10 @@
+import { useState } from 'react'
 import { NextPage } from 'next'
 
 import { QrcodeIcon } from '@heroicons/react/outline'
 
 import { R } from '../core/components/r'
 import { useCalculate } from '../core/services/useCalculate'
-import { useRef, useState } from 'react'
 
 const Page: NextPage = () => {
   const [red, setRed] = useState<string>('0')
