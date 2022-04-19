@@ -69,7 +69,7 @@ const Page: NextPage = () => {
               </span>
             </p>
             <p className="text-sm text-gray-600 font-extralight">
-              {withoutCharge.toLocaleString()}฿ without service charges
+              <span className='font-medium'>{withoutCharge.toLocaleString()}฿</span> w/o 10% charges
             </p>
           </div>
           <div className="flex items-center">
