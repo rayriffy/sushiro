@@ -74,7 +74,7 @@ const Page: NextPage = () => {
           </div>
           <div className="flex items-center">
             <a
-              href={`https://ppqr.app/?amount=${total}`}
+              href={`https://ppqr.app/?amount=${total.toFixed(2)}`}
               target="_blank"
               rel="noopener noreferrer"
             >
