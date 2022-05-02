@@ -1,9 +1,10 @@
 import { Component, createMemo, createSignal } from 'solid-js'
-import { useCalculate } from '../services/useCalculate'
-import { PriceGrid } from './priceGrid'
 
 import { QR } from './qr'
 import { R } from './r'
+import { PriceGrid } from '../../core/components/priceGrid'
+
+import { useCalculate } from '../services/useCalculate'
 
 export const App: Component = () => {
   const [red, setRed] = createSignal<string>('0')
