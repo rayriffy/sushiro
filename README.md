@@ -1,24 +1,20 @@
-sushiro
-===
+# sushiro
 
 Easy-to-use calculator for counting SUSHIRO dishes
 
-Install
----
+## Install
 
 ```
 pnpm i
 ```
 
-Develop
----
+## Develop
 
 ```
 pnpm dev
 ```
 
-Build
----
+## Build
 
 ```
 pnpm build

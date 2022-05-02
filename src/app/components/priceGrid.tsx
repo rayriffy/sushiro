@@ -1,4 +1,4 @@
-import { Dispatch, memo, SetStateAction } from 'react'
+import { Component, Setter } from 'solid-js'
 
 import { classNames } from '../services/classNames'
 
@@ -6,10 +6,10 @@ interface Props {
   primaryColor: string
   secondaryColor: string
   price: number
-  setter: Dispatch<SetStateAction<string>>
+  setter: Setter<string>
 }
 
-export const PriceGrid = memo<Props>(props => {
+export const PriceGrid: Component<Props> = props => {
   const { primaryColor, secondaryColor, price, setter } = props
 
   return (
@@ -20,7 +20,9 @@ export const PriceGrid = memo<Props>(props => {
           'relative w-20 h-20 rounded-full flex justify-center items-center mx-auto shadow'
         )}
       >
-        <div className={classNames(secondaryColor, "w-16 h-16 rounded-full")}></div>
+        <div
+          className={classNames(secondaryColor, 'w-16 h-16 rounded-full')}
+        ></div>
       </div>
       <h2 className="text-center font-semibold text-xl my-2">{price}฿</h2>
       <input
@@ -28,12 +30,14 @@ export const PriceGrid = memo<Props>(props => {
         inputMode="numeric"
         name={`sushi-${price}`}
         id={`sushi-${price}`}
-        onChange={event =>
-          setter(event.target.value === '' ? '0' : event.target.value)
-        }
+        onInput={event => {
+          setter(
+            event.currentTarget.value === '' ? '0' : event.currentTarget.value
+          )
+        }}
         className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md"
         placeholder="0"
       />
     </div>
   )
-})
+}
