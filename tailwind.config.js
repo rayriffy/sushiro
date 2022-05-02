@@ -4,6 +4,7 @@ module.exports = {
   darkMode: 'media',
   mode: 'jit',
   content: [
+    './index.html',
     './src/**/*.html',
     './src/**/*.tsx',
     './src/**/*.ts',
