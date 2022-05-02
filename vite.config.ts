@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 
+import { createHtmlPlugin } from 'vite-plugin-html'
 import { VitePWA } from 'vite-plugin-pwa'
 import ViteRadar from 'vite-plugin-radar'
 import solidPlugin from 'vite-plugin-solid'
@@ -7,6 +8,9 @@ import solidPlugin from 'vite-plugin-solid'
 export default defineConfig({
   plugins: [
     solidPlugin(),
+    createHtmlPlugin({
+      minify: true,
+    }),
     ViteRadar({
       analytics: {
         id: 'G-BNJE80MSRX',
