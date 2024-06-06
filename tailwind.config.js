@@ -1,22 +1,8 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-
-module.exports = {
-  darkMode: 'media',
-  mode: 'jit',
-  content: [
-    './index.html',
-    './src/**/*.html',
-    './src/**/*.tsx',
-    './src/**/*.ts',
-    './src/**/*.jsx',
-    './src/**/*.js',
-  ],
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,svelte}"],
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Niramit', ...defaultTheme.fontFamily.sans],
-      },
-    },
+    extend: {},
   },
-  plugins: [require('@tailwindcss/forms')],
-}
+  plugins: [],
+};
