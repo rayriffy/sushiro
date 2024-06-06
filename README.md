@@ -6,7 +6,7 @@ An easy-to-use calculator for counting Sushiro plates, and generating a QR code 
 
 ## Usage
 
-Go to [sushiro.rayriffy.com][https://sushiro.rayriffy.com], and add this web page to your home screen. This will make it easier to access, and transform this web into a full application.
+Go to [sushiro.rayriffy.com](https://sushiro.rayriffy.com), and add this web page to your home screen. This will make it easier to access, and transform this web into a full application.
 
 ## Development
 
