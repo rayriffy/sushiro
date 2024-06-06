@@ -1,0 +1,11 @@
+.chip-control {
+  @apply border-2 border-gray-200 flex rounded-md text-sm font-semibold items-center overflow-hidden
+}
+
+.chip-control > .price {
+  @apply text-white bg-black px-2 py-0.5 transition duration-200
+}
+
+.chip-control > .amount {
+  @apply px-2 py-0.5 transition duration-200
+}
