@@ -1,49 +1,44 @@
-name: Deploy
+name: Deployment
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
-  runtime:
+  deploy:
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
     steps:
-      - name: 'Intitialize: Checkout repository'
+      - name: checkout
         uses: actions/checkout@v3
-      - name: 'Intitialize: Summon NodeJS'
+      - name: pnpm
+        uses: pnpm/action-setup@v2
+      - name: node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
-      - name: 'Intitialize: Configure pnpm'
-        uses: pnpm/action-setup@v2.2.4
-        id: pnpm-install
-        with:
-          version: 7
-          run_install: false
-      - name: 'Cache: node_modules'
-        uses: actions/cache@v3
-        with:
-          path: |
-            node_modules
-            ~/.local/share/pnpm/store/v3
-          key: ${{ runner.OS }}-x86-node18-pnpm7-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.OS }}-x86-node18-pnpm7-${{ env.cache-name }}-
-            ${{ runner.OS }}-x86-node18-pnpm7-
-      - name: 'Intitialize: Install dependencies'
-        run: pnpm -r i --shamefully-hoist --prefer-offline
-      - name: 'Execute: Build'
+          node-version: 20
+          cache: pnpm
+      - name: install
+        run: pnpm -r i --frozen-lockfile
+      - name: build
         run: pnpm build
-      - name: 'Deployment: Upload artifacts'
+      - name: configure
+        uses: actions/configure-pages@v3
+      - name: upload
         uses: actions/upload-pages-artifact@v1
         with:
           path: dist
-      - name: 'Deployment: Deploy to target'
+      - name: deploy
         id: deployment
-        uses: actions/deploy-pages@v1
-      - name: 'Post-deplotyment: Logging'
+        uses: actions/deploy-pages@v2
+      - name: 'logging'
         run: echo "Deployed at ${{ steps.deployment.outputs.page_url }}"
