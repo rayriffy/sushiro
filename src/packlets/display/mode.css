@@ -1,0 +1,3 @@
+.mode-container {
+  @apply flex space-x-4 uppercase font-bold text-sm justify-end
+}
