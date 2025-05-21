@@ -17,6 +17,6 @@
     {/each}
   </ul>
   <footer>
-    <p>&copy; 2024 Phumrapee L. | <a href="https://rayriffy.com" target="_blank" rel="noopener noreferrer">Home</a> <a href="https://github.com/rayriffy/sushiro" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+    <p>&copy; 2024 - {new Date().getFullYear()} Phumrapee L. | <a href="https://rayriffy.com" target="_blank" rel="noopener noreferrer">Home</a> <a href="https://github.com/rayriffy/sushiro" target="_blank" rel="noopener noreferrer">GitHub</a></p>
   </footer>
 </section>
