@@ -1,6 +1,7 @@
 import type { PlateColor } from "./types";
 
 export enum PlateVariant {
+  White = "30",
   Red = "40",
   Silver = "60",
   Gold = "80",
@@ -8,6 +9,10 @@ export enum PlateVariant {
 }
 
 export const plateColors: Record<PlateVariant, PlateColor> = {
+  [PlateVariant.White]: {
+    outer: "bg-slate-200",
+    inner: "bg-slate-50",
+  },
   [PlateVariant.Red]: {
     outer: "bg-rose-700",
     inner: "bg-rose-600",
