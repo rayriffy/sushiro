@@ -1,7 +1,4 @@
 <script lang="ts">
-  import { clsx } from 'clsx'
-
-  import './control.css'
   import { removePrice } from '../price/removePrice'
 
   export let left: string | number

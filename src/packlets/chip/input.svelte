@@ -2,7 +2,6 @@
   import { PlateVariant, plateColors } from './constants'
   import { clsx } from 'clsx'
 
-  import './input.css'
   import { submitPrice } from '../price/submitPrice'
 
   export let variant: PlateVariant

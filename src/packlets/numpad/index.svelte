@@ -2,8 +2,6 @@
   import PadButton from './padButton.svelte';
   import { ButtonValue } from './constants';
   import { handlePadInput } from './handlePadInput'
-
-  import './index.css'
 </script>
 
 <section class="numpad-container">

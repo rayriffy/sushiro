@@ -1,7 +1,71 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 button {
   touch-action: manipulation;
+}
+
+.pad-button {
+  @apply text-lg w-16 aspect-square rounded-full font-bold hover:bg-gray-100 active:bg-gray-200 transition duration-200 flex justify-center items-center disabled:opacity-0;
+}
+
+.numpad-container {
+  @apply fixed bottom-0 left-0 right-0 max-w-sm mx-auto;
+}
+
+.numpad-grid {
+  @apply grid grid-cols-3 gap-4 px-6 pt-6;
+}
+
+footer {
+  @apply pt-4 pb-6 text-gray-400 text-center text-xs sm:text-sm;
+}
+
+footer > * > a {
+  @apply underline
+}
+
+.scroll-blob-l {
+  @apply z-50 absolute top-0 bottom-0 left-0 w-12 bg-gradient-to-l from-transparent to-white to-95%;
+}
+
+.scroll-blob-r {
+  @apply z-50 absolute top-0 bottom-0 right-0 w-12 bg-gradient-to-r from-transparent to-white to-95%;
+}
+
+.scroll-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-inner {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  @apply flex space-x-4 overflow-x-scroll relative px-12;
+}
+
+.chip-control {
+  @apply border-2 border-gray-200 flex rounded-md text-sm font-semibold items-center overflow-hidden
+}
+
+.chip-control > .price {
+  @apply text-white bg-black px-2 py-0.5 transition duration-200
+}
+
+.chip-control > .amount {
+  @apply px-2 py-0.5 transition duration-200
+}
+
+.chip-input {
+  @apply border-2 border-gray-200 flex rounded-md space-x-2 px-2 py-0.5 text-sm font-semibold items-center hover:bg-gray-100 active:bg-gray-200 transition duration-200;
+}
+
+.chip-input > .plate {
+  @apply w-5 aspect-square rounded-full flex justify-center items-center
+}
+
+.chip-input > .plate > .plate-inner {
+  @apply w-3.5 aspect-square rounded-full
+}
+
+.mode-container {
+  @apply flex space-x-4 uppercase font-bold text-sm justify-end
 }

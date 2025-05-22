@@ -8,8 +8,6 @@
   import { inputAtom } from '../price/inputAtom'
   import { latestActionAtom } from '../price/latestActionAtom'
 
-  import './padButton.css'
-
   export let value: ButtonValue
 
   const dispatch = createEventDispatcher<{ input: ButtonValue }>()

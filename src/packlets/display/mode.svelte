@@ -2,8 +2,6 @@
   import { inputAtom } from '../price/inputAtom'
   import { InputStage } from '../price/constants'
 
-  import './mode.css'
-
   $: selectMode = $inputAtom === null ? 'Result' : $inputAtom.mode === InputStage.Price ? 'Price' : 'Amount'
 </script>
 
