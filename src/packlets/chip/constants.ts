@@ -5,7 +5,7 @@ export enum PlateVariant {
   Red = "40",
   Silver = "60",
   Gold = "80",
-  Black = "120",
+  Black = "100",
 }
 
 export const plateColors: Record<PlateVariant, PlateColor> = {
