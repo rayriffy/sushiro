@@ -11,7 +11,7 @@
 
 {#if $inputAtom === null}
   <button
-    class={clsx("text-gray-500 font-semibold", !$chargeAtom ? 'line-through' : undefined)}
+    class={clsx("text-gray-500 dark:text-gray-400 font-semibold", !$chargeAtom ? 'line-through' : undefined)}
     on:click={() => chargeAtom.set(!$chargeAtom)}
   >
     {calculate($inventoryAtom, false)} w/o 10%

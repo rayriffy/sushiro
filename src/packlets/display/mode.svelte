@@ -7,6 +7,6 @@
 
 <div class="mode-container">
   {#each ['Result', 'Price', 'Amount'] as mode}
-    <span class={selectMode !== mode ? 'text-gray-400' : undefined}>{mode}</span>
+    <span class={selectMode !== mode ? 'text-gray-400 dark:text-gray-600' : undefined}>{mode}</span>
   {/each}
 </div>

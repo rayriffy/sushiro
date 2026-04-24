@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
+html {
+  @apply bg-white text-black dark:bg-black dark:text-white;
+}
+
 button {
   touch-action: manipulation;
 }
 
 .pad-button {
-  @apply text-lg w-16 aspect-square rounded-full font-bold hover:bg-gray-100 active:bg-gray-200 transition duration-200 flex justify-center items-center disabled:opacity-0;
+  @apply text-lg w-16 aspect-square rounded-full font-bold hover:bg-gray-100 active:bg-gray-200 dark:hover:bg-gray-800 dark:active:bg-gray-700 transition duration-200 flex justify-center items-center disabled:opacity-0;
 }
 
 .numpad-container {
@@ -17,7 +21,7 @@ button {
 }
 
 footer {
-  @apply pt-4 pb-6 text-gray-400 text-center text-xs sm:text-sm;
+  @apply pt-4 pb-6 text-gray-400 dark:text-gray-500 text-center text-xs sm:text-sm;
 }
 
 footer > * > a {
@@ -25,11 +29,11 @@ footer > * > a {
 }
 
 .scroll-blob-l {
-  @apply z-50 absolute top-0 bottom-0 left-0 w-12 bg-gradient-to-l from-transparent to-white to-95%;
+  @apply z-50 absolute top-0 bottom-0 left-0 w-12 bg-gradient-to-l from-transparent to-white dark:to-black to-95%;
 }
 
 .scroll-blob-r {
-  @apply z-50 absolute top-0 bottom-0 right-0 w-12 bg-gradient-to-r from-transparent to-white to-95%;
+  @apply z-50 absolute top-0 bottom-0 right-0 w-12 bg-gradient-to-r from-transparent to-white dark:to-black to-95%;
 }
 
 .scroll-inner::-webkit-scrollbar {
@@ -43,11 +47,11 @@ footer > * > a {
 }
 
 .chip-control {
-  @apply border-2 border-gray-200 flex rounded-md text-sm font-semibold items-center overflow-hidden
+  @apply border-2 border-gray-200 dark:border-gray-700 flex rounded-md text-sm font-semibold items-center overflow-hidden
 }
 
 .chip-control > .price {
-  @apply text-white bg-black px-2 py-0.5 transition duration-200
+  @apply text-white dark:text-black bg-black dark:bg-white px-2 py-0.5 transition duration-200
 }
 
 .chip-control > .amount {
@@ -55,7 +59,7 @@ footer > * > a {
 }
 
 .chip-input {
-  @apply border-2 border-gray-200 flex rounded-md space-x-2 px-2 py-0.5 text-sm font-semibold items-center hover:bg-gray-100 active:bg-gray-200 transition duration-200;
+  @apply border-2 border-gray-200 dark:border-gray-700 flex rounded-md space-x-2 px-2 py-0.5 text-sm font-semibold items-center hover:bg-gray-100 active:bg-gray-200 dark:hover:bg-gray-800 dark:active:bg-gray-700 transition duration-200;
 }
 
 .chip-input > .plate {
