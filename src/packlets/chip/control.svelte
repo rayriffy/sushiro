@@ -5,7 +5,7 @@ import { removePrice } from '../price/removePrice'
   export let left: number
   export let right: number
 
-  const handleClick = () => removePrice(Number(left))
+  const handleClick = () => removePrice(left)
 </script>
 
 <button class='chip-control group' on:click={handleClick}>
