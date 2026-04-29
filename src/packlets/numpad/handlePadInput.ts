@@ -4,7 +4,8 @@ import { latestActionAtom } from "../price/latestActionAtom";
 import { InputStage } from "../price/constants";
 import { inventoryAtom } from "../price/inventoryAtom";
 import { chargeAtom } from "../price/chargeAtom";
-import { calculate } from "../price/calculate";
+import { calculateRaw } from "../price/calculate";
+import { formatAmountParam } from "../price/format";
 
 export const handlePadInput = (button: ButtonValue) => {
   const input = inputAtom.get();
@@ -15,9 +16,10 @@ export const handlePadInput = (button: ButtonValue) => {
     const inventory = inventoryAtom.get();
     const charge = chargeAtom.get();
 
+    const amount = formatAmountParam(calculateRaw(inventory, charge));
     window
       .open(
-        `https://ppqr.app/?amount=${calculate(inventory, charge).replace(/,/g, "")}`,
+        `https://ppqr.app/?amount=${amount}`,
         "_blank",
       )
       ?.focus();

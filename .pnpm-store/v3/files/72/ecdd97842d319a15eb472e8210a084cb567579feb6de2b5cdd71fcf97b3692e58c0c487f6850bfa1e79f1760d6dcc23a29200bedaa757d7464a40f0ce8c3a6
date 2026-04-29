@@ -1,0 +1,34 @@
+{
+  "name": "nanostores",
+  "version": "1.3.0",
+  "description": "A tiny (294 bytes) state manager for React/Preact/Vue/Svelte with many atomic tree-shakable stores",
+  "keywords": [
+    "preact",
+    "react",
+    "react native",
+    "state",
+    "state manager",
+    "store",
+    "svelte",
+    "vue"
+  ],
+  "license": "MIT",
+  "author": "Andrey Sitnik <andrey@sitnik.es>",
+  "repository": "nanostores/nanostores",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/ai"
+    }
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "types": "./index.d.ts",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": "^20.0.0 || >=22.0.0"
+  }
+}

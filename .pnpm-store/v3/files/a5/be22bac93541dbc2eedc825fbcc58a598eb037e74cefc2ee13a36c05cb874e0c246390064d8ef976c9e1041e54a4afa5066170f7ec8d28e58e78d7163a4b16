@@ -1,0 +1,76 @@
+{
+  "name": "@iconify/svelte",
+  "description": "Iconify icon component for Svelte.",
+  "author": "Vjacheslav Trushkin",
+  "version": "5.2.1",
+  "type": "module",
+  "license": "MIT",
+  "bugs": "https://github.com/iconify/iconify/issues",
+  "homepage": "https://github.com/iconify/iconify",
+  "funding": "https://github.com/sponsors/cyberalien",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iconify/iconify.git",
+    "directory": "components/svelte"
+  },
+  "svelte": "dist/Icon.svelte",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "svelte": "./dist/Icon.svelte",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/Icon.svelte": {
+      "svelte": "./dist/Icon.svelte",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/OfflineIcon.svelte": {
+      "svelte": "./dist/OfflineIcon.svelte",
+      "types": "./dist/offline.d.ts"
+    },
+    "./dist/functions": {
+      "types": "./lib/dist/functions.d.ts",
+      "require": "./lib/dist/functions.cjs",
+      "import": "./lib/dist/functions.js"
+    },
+    "./dist/offline-functions": {
+      "types": "./lib/dist/offline-functions.d.ts",
+      "require": "./lib/dist/offline-functions.cjs",
+      "import": "./lib/dist/offline-functions.js"
+    },
+    "./*": "./*"
+  },
+  "dependencies": {
+    "@iconify/types": "^2.0.0"
+  },
+  "devDependencies": {
+    "@microsoft/api-extractor": "^7.55.2",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@tsconfig/svelte": "^5.0.6",
+    "@types/jest": "^30.0.0",
+    "@vitest/browser-playwright": "^4.0.16",
+    "playwright": "^1.57.0",
+    "rimraf": "^6.1.2",
+    "rollup": "^4.55.1",
+    "rollup-plugin-svelte": "^7.2.3",
+    "svelte": "^5.46.1",
+    "svelte-preprocess": "^6.0.3",
+    "vitest-browser-svelte": "^2.0.1",
+    "@iconify/utils": "^3.1.0",
+    "@iconify/core": "^4.1.0"
+  },
+  "peerDependencies": {
+    "svelte": ">5.0.0"
+  },
+  "scripts": {
+    "cleanup": "rimraf lib dist",
+    "prebuild": "pnpm run cleanup",
+    "build": "node build",
+    "build:tsc": "tsc -b tsconfig.src.json",
+    "build:bundles": "rollup -c rollup.config.js",
+    "build:api": "node build --only-api",
+    "test": "vitest"
+  }
+}
