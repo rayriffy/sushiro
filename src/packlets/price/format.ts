@@ -20,7 +20,11 @@ export const formatFixedWithThousands = (value: number, fractionDigits: number) 
 };
 
 export const formatAmountDisplay = (value: number) => {
+  if (Math.abs(value) >= 1_000_000)
+    return value.toExponential(2);
+
   const fixed = formatFixedWithThousands(value, 2);
+
   return fixed.endsWith(".00") ? fixed.slice(0, -3) : fixed;
 };
 
